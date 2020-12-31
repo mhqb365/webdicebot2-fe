@@ -122,7 +122,23 @@
                     : "Working"
                 }}
               </td>
-              <td>{{ doc.value }}</td>
+              <!-- <td>{{ doc.value }}</td> -->
+              <td>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" :value="doc.value" />
+                  <div class="input-group-append">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      v-clipboard="() => doc.value"
+                      v-clipboard:success="clipboardSuccess"
+                      v-clipboard:error="clipboardError"
+                    >
+                      Copy
+                    </button>
+                  </div>
+                </div>
+              </td>
               <td>
                 {{
                   new Date(doc.time).toLocaleString("en-GB", {
@@ -409,7 +425,7 @@ document.body.appendChild(script)`,
           let data = response.data;
           // console.log(data);
           this.priceTronPerDay = 2 / Number(data.price) / 1e1;
-          this.calculator()
+          this.calculator();
         })
         .catch((error) => {
           console.error(error);
