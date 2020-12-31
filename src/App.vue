@@ -6,13 +6,13 @@
           <div class="modal-body text-center">
             <h1 class="text-primary">Happy New Year 2021</h1>
 
-            <hr>
+            <hr />
 
             <p>
-              ☛ If you already have a valid license before 1/1/2021, go to old
-              version:
-              <a href="https://old.webdicebot.xyz"
-                >https://old.webdicebot.xyz</a
+              ☛ If you already have a valid license before 1/1/2021, contact me
+              <a href="mailto:mhqb365@gmail.com" target="_blank"
+                >mhqb365@gmail.com</a
+              >
               >
             </p>
           </div>
