@@ -3,16 +3,15 @@
     <div class="modal fade" id="notify">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-body text-center">
-            <h1 class="text-primary">Happy New Year 2021</h1>
+          <div class="modal-body">
+            <h1 class="text-primary text-center">Happy New Year 2021</h1>
 
             <hr />
 
             <p>
-              ☛ If you already have a valid license before 1/1/2021, contact me
+              ☛ If you already have a valid license before 1/1/2021, contact Admin to recover:
               <a href="mailto:mhqb365@gmail.com" target="_blank"
                 >mhqb365@gmail.com</a
-              >
               >
             </p>
           </div>
