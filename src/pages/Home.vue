@@ -1,40 +1,42 @@
 <template>
   <div class="row">
     <div class="col-12 mt-5 mb-5">
-      <div class="row justify-content-center text-center">
+      <h3 class="text-primary text-center">Features</h3>
+      
+      <div class="row text-center">
         <div class="col-6 p-4">
           <h1 class="text-success"><i class="fas fa-globe"></i></h1>
-          <h3 class="text-shadow">Multiple sites</h3>
+          <h3>Multiple sites</h3>
           <p>Supports a multitude of sites dice and currencies</p>
         </div>
 
         <div class="col-6 p-4">
-          <h1 class="text-danger"><i class="fas fa-desktop"></i></h1>
-          <h3 class="text-shadow">Device friendlly</h3>
+          <h1 class="text-purple"><i class="fas fa-desktop"></i></h1>
+          <h3>Device friendlly</h3>
           <p>Ready to use on any desktop os have an browser</p>
         </div>
 
         <div class="col-6 p-4">
           <h1 class="text-warning"><i class="fas fa-code"></i></h1>
-          <h3 class="text-shadow">Programmer</h3>
+          <h3>Programmer</h3>
           <p>You can using strategy code with Lua or JavaScript</p>
         </div>
 
         <div class="col-6 p-4">
           <h1 class="text-success"><i class="fas fa-user-shield"></i></h1>
-          <h3 class="text-shadow">Professional</h3>
+          <h3>Professional</h3>
           <p>Show full bet details and easy to set up and use</p>
         </div>
 
         <div class="col-6 p-4">
           <h1 class="text-purple"><i class="fas fa-tasks"></i></h1>
-          <h3 class="text-shadow">Simple and faster</h3>
+          <h3>Simple and faster</h3>
           <p>Licenses manager simple, buy license faster and easy</p>
         </div>
 
         <div class="col-6 p-4">
-          <h1 class="text-info"><i class="fas fa-dollar-sign"></i></h1>
-          <h3 class="text-shadow">Cheap price</h3>
+          <h1 class="text-warning"><i class="fas fa-dollar-sign"></i></h1>
+          <h3>Cheap price</h3>
           <p>Use with only 0.2$ per days</p>
         </div>
 
@@ -63,6 +65,33 @@
 6. Do not share your license if you do not want anyone use bot by your money
 7. Only use the installer in webdicebot.xyz if you don't want someone fake us to trick you</pre
       >
+    </div>
+
+    <div class="col-sm-12 col-md-12 mt-5 mb-5">
+      <h3 class="text-primary text-center">How to use</h3>
+
+      <div class="row text-center">
+        <div class="col-sm-12 col-md-4 p-4">
+          <p>Step 1</p>
+          <h1 class="text-success"><i class="fas fa-user-plus"></i></h1>
+          <h3>Join</h3>
+          <p>Join to system via Register/Login</p>
+        </div>
+
+        <div class="col-sm-12 col-md-4 p-4">
+          <p>Step 2</p>
+          <h1 class="text-purple"><i class="fas fa-wallet"></i></h1>
+          <h3>Buy</h3>
+          <p>Deposit Tron (TRX) to system then buy license</p>
+        </div>
+
+        <div class="col-sm-12 col-md-4 p-4">
+          <p>Step 3</p>
+          <h1 class="text-warning"><i class="fas fa-hammer"></i></h1>
+          <h3>Use</h3>
+          <p>Use installer same to old version in dashboard</p>
+        </div>
+      </div>
     </div>
 
     <div class="col-sm-12 col-md-6 mt-5 mb-5">
@@ -103,7 +132,7 @@ function dobet() {
       >
     </div>
 
-    <div class="col-sm-12 col-md-6 mt-5 mb-5">
+    <div class="col-sm-12 col-md-12 mt-5 mb-5">
       <h3 class="text-primary">Variables</h3>
 
       <pre class="bg-light">
@@ -127,7 +156,7 @@ currentstreak | streak of bet count
       >
     </div>
 
-    <div class="col-sm-12 col-md-6 mt-5 mb-5">
+    <div class="col-sm-12 col-md-12 mt-5 mb-5">
       <h3 class="text-primary">Functions</h3>
 
       <pre class="bg-light">
@@ -151,27 +180,4 @@ export default {};
 </script>
 
 <style>
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
-}
-
-.circle-img {
-  position: absolute;
-  left: 0;
-  top: 10%;
-  /* transform: translateY(-30%); */
-  z-index: -1;
-  right: 0;
-  margin: 0 auto;
-  animation: rotation 6s infinite linear;
-}
-
-.text-purple {
-  color: #6610f2;
-}
 </style>

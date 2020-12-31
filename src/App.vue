@@ -3,16 +3,14 @@
     <div class="modal fade" id="notify">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Notify</h4>
-            <!-- <button type="button" class="close" data-dismiss="modal">
-              &times;
-            </button> -->
-          </div>
+          <div class="modal-body text-center">
+            <h1 class="text-primary">Happy New Year 2021</h1>
 
-          <div class="modal-body">
+            <hr>
+
             <p>
-              If you already have a valid license key before 1/1/2021, go here
+              ☛ If you already have a valid license before 1/1/2021, go to old
+              version:
               <a href="https://old.webdicebot.xyz"
                 >https://old.webdicebot.xyz</a
               >
@@ -80,5 +78,24 @@ export default {
 
 .text-shadow {
   text-shadow: 0 0 15px #17a2b8;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.circle-img {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  z-index: -1;
+  right: 0;
+  margin: 0 auto;
+  animation: rotation 6s infinite linear;
 }
 </style>

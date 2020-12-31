@@ -39,13 +39,13 @@
           <router-link to="/dashboard" class="nav-link">Dashboard</router-link>
         </li>
 
-        <li
+        <!-- <li
           v-if="isLogin"
           class="nav-item"
           v-bind:class="[this.$route.path == '/store' ? 'active' : '']"
         >
           <router-link to="/store" class="nav-link">Code store</router-link>
-        </li>
+        </li> -->
 
         <li
           v-if="isLogin"
