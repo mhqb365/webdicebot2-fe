@@ -7,6 +7,7 @@ import Dashboard from '@/pages/Dashboard'
 import Deposit from '@/pages/Deposit'
 import Withdraw from '@/pages/Withdraw'
 import Store from '@/pages/Store'
+import Admin from '@/pages/Admin'
 
 Vue.use(Router)
 
@@ -51,6 +52,16 @@ const router = new Router({
       name: 'Store',
       component: Store,
       meta: { requiresAuth: true }
+    },
+    {
+      path: '/admin',
+      name: 'Admin',
+      component: Admin,
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '*',
+      redirect: '/'
     }
   ]
 })

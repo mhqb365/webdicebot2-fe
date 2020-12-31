@@ -141,7 +141,6 @@ export default {
   data() {
     return {
       isLoading: false,
-      user: {},
       docs: [],
       page: 1,
       totalDocs: 0,
@@ -156,23 +155,9 @@ export default {
     };
   },
   mounted: function () {
-    this.profile();
     this.listWithdraw(this.page);
   },
   methods: {
-    profile: function () {
-      axios({
-        url: API_URL + "/user/profile/" + localStorage.getItem("userName"),
-        method: "GET",
-        headers: {
-          Auth: localStorage.getItem("token"),
-        },
-      }).then((response) => {
-        let res = response.data;
-        // console.log(res);
-        this.user = res.data;
-      });
-    },
     listWithdraw: function (page) {
       axios({
         url:

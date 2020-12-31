@@ -173,7 +173,6 @@ export default {
   data() {
     return {
       isLoading: true,
-      user: {},
       docs: [],
       page: 1,
       totalDocs: 0,
@@ -372,25 +371,11 @@ document.body.appendChild(script)`,
     };
   },
   mounted: function () {
-    this.profile();
     this.license(this.page);
     this.fetchPriceTron();
     setInterval(() => this.fetchPriceTron(), 6e4);
   },
   methods: {
-    profile: function () {
-      axios({
-        url: API_URL + "/user/profile/" + localStorage.getItem("userName"),
-        method: "GET",
-        headers: {
-          Auth: localStorage.getItem("token"),
-        },
-      }).then((response) => {
-        let res = response.data;
-        // console.log(res);
-        this.user = res.data;
-      });
-    },
     license: function (page) {
       axios({
         url:

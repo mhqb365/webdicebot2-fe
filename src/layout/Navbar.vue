@@ -32,6 +32,14 @@
         </li>
 
         <li
+          v-if="isLogin && user.permission > 0"
+          class="nav-item"
+          v-bind:class="[this.$route.path == '/admin' ? 'active' : '']"
+        >
+          <router-link to="/admin" class="nav-link">Admin</router-link>
+        </li>
+
+        <li
           v-if="isLogin"
           class="nav-item"
           v-bind:class="[this.$route.path == '/dashboard' ? 'active' : '']"

@@ -13,13 +13,18 @@ Vue.config.productionTip = false
 Vue.mixin({
   data() {
     return {
-      isLogin: false
+      isLogin: false,
+      user: {}
     }
   },
   mounted: function () {
     localStorage.getItem("userName") && localStorage.getItem("token")
       ? (this.isLogin = true)
       : (this.isLogin = false)
+
+      if (this.isLogin) {
+        this.profile()
+      }
   },
   methods: {
     logout: function () {
@@ -40,6 +45,19 @@ Vue.mixin({
     },
     clipboardError: function () {
       this.showAlert("Copy fail", false)
+    },
+    profile: function () {
+      axios({
+        url: API_URL + "/user/profile/" + localStorage.getItem("userName"),
+        method: "GET",
+        headers: {
+          Auth: localStorage.getItem("token"),
+        },
+      }).then((response) => {
+        let res = response.data;
+        // console.log(res);
+        this.user = res.data;
+      });
     },
     checkDeposit: function () {
       axios({
