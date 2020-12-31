@@ -16,6 +16,16 @@
       <p>Balance: {{ Number(user.balance).toFixed(6) }} TRX</p>
 
       <button
+        v-if="isLoading"
+        type="button"
+        class="btn btn-secondary btn-block mb-3"
+        disabled
+      >
+        <span class="spinner-border spinner-border-sm"></span>
+      </button>
+
+      <button
+        v-else
         type="button"
         class="btn btn-secondary btn-block mb-3"
         @click="request"
@@ -40,6 +50,16 @@
       </div>
 
       <button
+        v-if="isLoading"
+        type="button"
+        class="btn btn-secondary btn-block mb-3"
+        disabled
+      >
+        <span class="spinner-border spinner-border-sm"></span>
+      </button>
+
+      <button
+        v-else
         type="button"
         class="btn btn-secondary btn-block mb-3"
         @click="tip"
@@ -120,6 +140,7 @@ import TRON_NODE from "@/utils/tronNode";
 export default {
   data() {
     return {
+      isLoading: false,
       user: {},
       docs: [],
       page: 1,
@@ -178,9 +199,11 @@ export default {
     request: function (page) {
       if (!this.withdrawAddress || !this.withdrawAmount)
         return this.showAlert("Please enter your complete information", false);
+      if (Number(this.withdrawAmount) == 0)
+        return this.showAlert("Amount must more than 0", false);
       if (this.withdrawAmount < this.user.balance)
         return this.showAlert("Balance not enough", false);
-
+      this.isLoading = true;
       axios({
         url: API_URL + "/withdraw/request/" + localStorage.getItem("userName"),
         method: "POST",
@@ -192,17 +215,23 @@ export default {
           amount: this.withdrawAmount,
         },
       }).then((response) => {
+        this.isLoading = false;
         let res = response.data;
-        console.log(res);
-        // this.docs = res.data.docs;
+        // console.log(res);
+        if (res.status) {
+          this.profile();
+          this.listWithdraw(this.page);
+        }
       });
     },
     tip: function (page) {
       if (!this.tipUserName || !this.tipAmount)
         return this.showAlert("Please enter your complete information", false);
+      if (Number(this.tipAmount) == 0)
+        return this.showAlert("Amount must more than 0", false);
       if (Number(this.tipAmount) > this.user.balance)
         return this.showAlert("Balance not enough", false);
-
+      this.isLoading = true;
       axios({
         url: API_URL + "/withdraw/tip/" + localStorage.getItem("userName"),
         method: "POST",
@@ -214,9 +243,13 @@ export default {
           amount: this.tipAmount,
         },
       }).then((response) => {
+        this.isLoading = false;
         let res = response.data;
-        console.log(res);
-        // this.docs = res.data.docs;
+        // console.log(res);
+        if (res.status) {
+          this.profile();
+          this.listWithdraw(this.page);
+        }
       });
     },
   },

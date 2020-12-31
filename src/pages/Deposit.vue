@@ -75,11 +75,9 @@
                   target="_blank"
                   >{{ doc.txid }}</a
                 >
-                <span v-else >from {{ doc.txid }}</span>
+                <span v-else>from {{ doc.txid }}</span>
               </td>
-              <td>
-                {{ doc.amount }}
-              </td>
+              <td>{{ doc.amount }} TRX</td>
             </tr>
           </tbody>
         </table>

@@ -10,7 +10,21 @@
       <input type="password" class="form-control" v-model="password" />
     </div>
 
-    <button type="button" class="btn btn-secondary btn-block" @click="login">
+    <button
+      v-if="isLoading"
+      type="button"
+      class="btn btn-secondary btn-block"
+      disabled
+    >
+      <span class="spinner-border spinner-border-sm"></span>
+    </button>
+
+    <button
+      v-else
+      type="button"
+      class="btn btn-secondary btn-block"
+      @click="login"
+    >
       Login
     </button>
   </div>
@@ -23,6 +37,7 @@ import API_URL from "@/utils/apiUrl";
 export default {
   data() {
     return {
+      isLoading: false,
       userName: "",
       password: "",
     };
@@ -36,6 +51,8 @@ export default {
           "Username and password must be over 6 characters",
           false
         );
+
+      this.isLoading = true;
       axios({
         url: API_URL + "/user/login",
         method: "POST",
@@ -44,6 +61,7 @@ export default {
           password: this.password,
         },
       }).then((response) => {
+        this.isLoading = false;
         let res = response.data;
         // console.log(res);
         if (!res.status) return this.showAlert(res.message, false);

@@ -20,7 +20,21 @@
       <input type="password" class="form-control" v-model="rePassword" />
     </div>
 
-    <button type="button" class="btn btn-secondary btn-block" @click="register">
+    <button
+      v-if="isLoading"
+      type="button"
+      class="btn btn-secondary btn-block"
+      disabled
+    >
+      <span class="spinner-border spinner-border-sm"></span>
+    </button>
+
+    <button
+      v-else
+      type="button"
+      class="btn btn-secondary btn-block"
+      @click="register"
+    >
       Register
     </button>
   </div>
@@ -33,6 +47,7 @@ import API_URL from "@/utils/apiUrl";
 export default {
   data() {
     return {
+      isLoading: false,
       userName: "",
       email: "",
       password: "",
@@ -50,6 +65,7 @@ export default {
         );
       if (this.password != this.rePassword)
         return this.showAlert("Re-type password incorrect", false);
+      this.isLoading = true;
       axios({
         url: API_URL + "/user/register",
         method: "POST",
@@ -59,6 +75,7 @@ export default {
           password: this.password,
         },
       }).then((response) => {
+        this.isLoading = false;
         let res = response.data;
         // console.log(res);
         if (!res.status) return this.showAlert(res.message, false);
