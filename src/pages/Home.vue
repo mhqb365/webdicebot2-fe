@@ -89,7 +89,7 @@
           <p>Step 3</p>
           <h1 class="text-warning"><i class="fas fa-hammer"></i></h1>
           <h3>Use</h3>
-          <p>Use installer same to old version in dashboard</p>
+          <p>Use installer same to old version in Dashboard</p>
         </div>
       </div>
     </div>
