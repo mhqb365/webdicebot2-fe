@@ -9,9 +9,9 @@
             <hr />
 
             <p>
-              ☛ If you already have a valid license before 1/1/2021, contact Admin to recover:
-              <a href="mailto:mhqb365@gmail.com" target="_blank"
-                >mhqb365@gmail.com</a
+              ☛ If you already have a valid license before 1/1/2021, go to:
+              <a href="https://old.webdicebot.xyz/" target="_blank"
+                >https://old.webdicebot.xyz/</a
               >
             </p>
           </div>
