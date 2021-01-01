@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-12 mt-5 mb-5">
-      <h3 class="text-primary">Add license</h3>
+      <h3 class="text-primary">Add free license</h3>
 
       <div class="form-group">
         <label>Username</label>

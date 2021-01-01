@@ -82,7 +82,7 @@
           <p>Step 2</p>
           <h1 class="text-purple"><i class="fas fa-wallet"></i></h1>
           <h3>Buy</h3>
-          <p>Deposit Tron (TRX) to system then buy license</p>
+          <p>Deposit TRX (Tron) to system then buy license</p>
         </div>
 
         <div class="col-sm-12 col-md-4 p-4">

@@ -121,7 +121,7 @@
                   target="_blank"
                   >{{ doc.txid }}</a
                 >
-                <span v-else>to {{ doc.txid }}</span>
+                <span v-else>send to {{ doc.txid }}</span>
               </td>
               <td>{{ doc.amount }} TRX</td>
             </tr>
