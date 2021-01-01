@@ -75,10 +75,6 @@ export default {
   color: #581fb2;
 }
 
-.text-shadow {
-  text-shadow: 0 0 15px #17a2b8;
-}
-
 @keyframes rotation {
   from {
     transform: rotate(0deg);
