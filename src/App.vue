@@ -10,8 +10,8 @@
 
             <p>
               ☛ If you already have a valid license before 1/1/2021, go to:
-              <a href="https://old.webdicebot.xyz/" target="_blank"
-                >https://old.webdicebot.xyz/</a
+              <a href="https://old.webdicebot.xyz" target="_blank"
+                >https://old.webdicebot.xyz</a
               >
             </p>
           </div>
