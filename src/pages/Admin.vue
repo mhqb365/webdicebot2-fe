@@ -30,47 +30,29 @@
           <div class="card p-4 summary">
             Income
             <br />
-            <span
-              v-if="isLoading"
-              class="spinner-border spinner-border-sm"
-            ></span>
-            <div v-else>
-              <h4 class="text-success">{{ Number(income).toFixed(6) }} TRX</h4>
-              ~{{ Number(priceUsd * income).toFixed(2) }} $
-            </div>
+            <h4 class="text-success">{{ Number(income).toFixed(6) }} TRX</h4>
+            ~{{ Number(priceUsd * income).toFixed(2) }} $
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <div class="card p-4 summary">
             License
             <br />
-            <span
-              v-if="isLoading"
-              class="spinner-border spinner-border-sm"
-            ></span>
-            <h4 v-else class="text-purple">{{ license }}</h4>
+            <h4 class="text-purple">{{ license }}</h4>
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <div class="card p-4 summary">
             Pay
             <br />
-            <span
-              v-if="isLoading"
-              class="spinner-border spinner-border-sm"
-            ></span>
-            <h4 v-else class="text-warning">{{ pay }}</h4>
+            <h4 class="text-warning">{{ pay }}</h4>
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <div class="card p-4 summary">
             Free
             <br />
-            <span
-              v-if="isLoading"
-              class="spinner-border spinner-border-sm"
-            ></span>
-            <h4 v-else class="text-danger">{{ free }}</h4>
+            <h4 class="text-danger">{{ free }}</h4>
           </div>
         </div>
       </div>
@@ -141,7 +123,6 @@ export default {
       this.pay = 0;
       this.free = 0;
 
-      this.isLoading = true;
       axios({
         url: API_URL + "/license/summary" + state,
         method: "GET",
@@ -149,7 +130,6 @@ export default {
           Auth: localStorage.getItem("token"),
         },
       }).then((response) => {
-        this.isLoading = false;
         let res = response.data;
         // console.log(res);
         if (!res.status) return this.showAlert(res.message, false);
