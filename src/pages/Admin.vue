@@ -36,7 +36,7 @@
             ></span>
             <div v-else>
               <h4 class="text-success">{{ Number(income).toFixed(6) }} TRX</h4>
-              ~{{ Number(usd).toFixed(2) }} $
+              ~{{ Number(priceUsd * income).toFixed(2) }} $
             </div>
           </div>
         </div>
@@ -122,7 +122,7 @@ export default {
       limit: 10,
       state: "ThisMonth",
       income: 0,
-      usd: 0,
+      priceUsd: 0,
       license: 0,
       pay: 0,
       free: 0,
@@ -130,8 +130,8 @@ export default {
   },
   mounted: function () {
     this.summary(this.state);
-    this.fetchPrice();
-    setInterval(() => this.fetchPrice(), 6e4);
+    this.fetchPriceUsd();
+    setInterval(() => this.fetchPriceUsd(), 6e4);
   },
   methods: {
     summary: function (state) {
@@ -160,10 +160,10 @@ export default {
         });
       });
     },
-    fetchPrice: function () {
+    fetchPriceUsd: function () {
       this.fetchPriceTron().then((response) => {
         // console.log(response);
-        this.usd = Number(response) * this.income;
+        this.priceUsd = Number(response);
       });
     },
     add: function () {
