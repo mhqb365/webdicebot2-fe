@@ -27,20 +27,21 @@
 
       <div class="row">
         <div class="col-md-3 mb-3">
-          <div class="card p-4">
+          <div class="card p-4 summary">
             Income
             <br />
             <span
               v-if="isLoading"
               class="spinner-border spinner-border-sm"
             ></span>
-            <h4 v-else class="text-success">
-              {{ Number(income).toFixed(6) }} TRX
-            </h4>
+            <div v-else>
+              <h4 class="text-success">{{ Number(income).toFixed(6) }} TRX</h4>
+              ~{{ Number(usd).toFixed(2) }} $
+            </div>
           </div>
         </div>
         <div class="col-md-3 mb-3">
-          <div class="card p-4">
+          <div class="card p-4 summary">
             License
             <br />
             <span
@@ -51,7 +52,7 @@
           </div>
         </div>
         <div class="col-md-3 mb-3">
-          <div class="card p-4">
+          <div class="card p-4 summary">
             Pay
             <br />
             <span
@@ -62,7 +63,7 @@
           </div>
         </div>
         <div class="col-md-3 mb-3">
-          <div class="card p-4">
+          <div class="card p-4 summary">
             Free
             <br />
             <span
@@ -121,6 +122,7 @@ export default {
       limit: 10,
       state: "ThisMonth",
       income: 0,
+      usd: 0,
       license: 0,
       pay: 0,
       free: 0,
@@ -128,6 +130,8 @@ export default {
   },
   mounted: function () {
     this.summary(this.state);
+    this.fetchPrice();
+    setInterval(() => this.fetchPrice(), 6e4);
   },
   methods: {
     summary: function (state) {
@@ -154,6 +158,12 @@ export default {
           this.license += 1;
           d.type == "Pay" ? (this.pay += 1) : (this.free += 1);
         });
+      });
+    },
+    fetchPrice: function () {
+      this.fetchPriceTron().then((response) => {
+        // console.log(response);
+        this.usd = Number(response) * this.income;
       });
     },
     add: function () {
@@ -185,4 +195,7 @@ export default {
 </script>
 
 <style>
+.summary {
+  min-height: 135px;
+}
 </style>
