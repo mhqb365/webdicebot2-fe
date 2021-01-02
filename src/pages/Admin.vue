@@ -29,25 +29,47 @@
         <div class="col-md-3 mb-3">
           <div class="card p-4">
             Income
-            <h4 class="text-success">{{ Number(income).toFixed(6) }} TRX</h4>
+            <br />
+            <span
+              v-if="isLoading"
+              class="spinner-border spinner-border-sm"
+            ></span>
+            <h4 v-else class="text-success">
+              {{ Number(income).toFixed(6) }} TRX
+            </h4>
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <div class="card p-4">
             License
-            <h4 class="text-purple">{{ license }}</h4>
+            <br />
+            <span
+              v-if="isLoading"
+              class="spinner-border spinner-border-sm"
+            ></span>
+            <h4 v-else class="text-purple">{{ license }}</h4>
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <div class="card p-4">
             Pay
-            <h4 class="text-warning">{{ pay }}</h4>
+            <br />
+            <span
+              v-if="isLoading"
+              class="spinner-border spinner-border-sm"
+            ></span>
+            <h4 v-else class="text-warning">{{ pay }}</h4>
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <div class="card p-4">
             Free
-            <h4 class="text-danger">{{ free }}</h4>
+            <br />
+            <span
+              v-if="isLoading"
+              class="spinner-border spinner-border-sm"
+            ></span>
+            <h4 v-else class="text-danger">{{ free }}</h4>
           </div>
         </div>
       </div>
@@ -66,7 +88,21 @@
         <input type="number" class="form-control" v-model="limit" />
       </div>
 
-      <button type="button" class="btn btn-secondary btn-block" @click="add">
+      <button
+        v-if="isLoading"
+        type="button"
+        class="btn btn-secondary btn-block mb-3"
+        disabled
+      >
+        <span class="spinner-border spinner-border-sm"></span>
+      </button>
+
+      <button
+        v-else
+        type="button"
+        class="btn btn-secondary btn-block"
+        @click="add"
+      >
         Add
       </button>
     </div>
@@ -111,9 +147,8 @@ export default {
       }).then((response) => {
         this.isLoading = false;
         let res = response.data;
-        console.log(res);
+        // console.log(res);
         if (!res.status) return this.showAlert(res.message, false);
-        // window.location.reload();
         res.data.map((d) => {
           this.income += d.price;
           this.license += 1;
@@ -140,7 +175,9 @@ export default {
         let res = response.data;
         // console.log(res);
         if (!res.status) return this.showAlert(res.message, false);
-        window.location.reload();
+        this.showAlert("Success");
+        this.userName = "";
+        this.limit = 10;
       });
     },
   },

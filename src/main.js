@@ -22,9 +22,9 @@ Vue.mixin({
       ? (this.isLogin = true)
       : (this.isLogin = false)
 
-      if (this.isLogin) {
-        this.profile()
-      }
+    if (this.isLogin) {
+      this.profile()
+    }
   },
   methods: {
     logout: function () {
@@ -45,6 +45,14 @@ Vue.mixin({
     },
     clipboardError: function () {
       this.showAlert("Copy fail", false)
+    },
+    fetchPriceTron: async function () {
+      let result = await axios({
+        url: "https://api.binance.com/api/v3/ticker/price?symbol=TRXUSDT",
+        method: "GET",
+      })
+
+      return result.data.price
     },
     profile: function () {
       axios({
