@@ -186,7 +186,7 @@ export default {
         return this.showAlert("Please enter your complete information", false);
       if (Number(this.withdrawAmount) == 0)
         return this.showAlert("Amount must more than 0", false);
-      if (this.withdrawAmount < this.user.balance)
+      if (this.withdrawAmount > this.user.balance)
         return this.showAlert("Balance not enough", false);
       this.isLoading = true;
       axios({
