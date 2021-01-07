@@ -4,7 +4,16 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-body">
-            <h1 class="text-primary text-center">Happy New Year 2021</h1>
+            <h1 class="text-warning">Important warning</h1>
+
+            <p>
+              Recently some users reported having stolen money and they blamed
+              Web DiceBot for doing it. We have encountered this problem many
+              times since the DiceBot Web project started. Sure, we don't do
+              this. We can only advise you to keep up to date with all types of
+              security for your accounts on the dice sites. Thank all for
+              trusting and using Web DiceBot for over 2 years. Thank a lot of!
+            </p>
 
             <hr />
 

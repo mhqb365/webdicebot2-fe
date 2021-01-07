@@ -63,7 +63,8 @@
 4. You must know the Lua (v5.3) programming language or Javascript when manipulating the script/code
 5. You must have license key when use Web DiceBot (buy license key in dashboard when you join system)
 6. Do not share your license if you do not want anyone use bot by your money
-7. Only use the installer in webdicebot.xyz if you don't want someone fake us to trick you</pre
+7. Only use the installer in webdicebot.xyz if you don't want someone fake us to trick you
+8. Upgrade level max for security in your account at dice sites</pre
       >
     </div>
 
