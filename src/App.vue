@@ -9,7 +9,7 @@
             <p>
               Recently some users reported having stolen money and they blamed
               Web DiceBot for doing it. We have encountered this problem many
-              times since the DiceBot Web project started. Sure, we don't do
+              times since the Web DiceBot project started. Sure, we don't do
               this. We can only advise you to keep up to date with all types of
               security for your accounts on the dice sites. Thank all for
               trusting and using Web DiceBot for over 2 years. Thank a lot of!
