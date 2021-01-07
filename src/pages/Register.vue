@@ -1,5 +1,11 @@
 <template>
   <div class="mt-5 mb-5">
+    <p>
+      ☛ This is the account only use at webdicebot.xyz. Please do not use
+      accounts at dice sites. Because we don't want to have any bad thoughts
+      about our project
+    </p>
+
     <div class="form-group">
       <label>Username</label>
       <input type="text" class="form-control" v-model="userName" />
